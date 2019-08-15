@@ -14,7 +14,8 @@ export default function Mars() {
       .then(response => {
         const random = Math.floor(Math.random() * response.data.photos.length);
         setData(response.data.photos[random]);
-      });
+      })
+      .catch(err => console.log(err));
   }, []);
 
   if (!data.img_src) return <h4>Loading...</h4>;

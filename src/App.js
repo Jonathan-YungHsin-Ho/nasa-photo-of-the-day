@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 import Nav from './Components/Nav';
@@ -18,19 +18,6 @@ function App() {
     setOnApod(false);
     setOnMars(true);
   };
-
-  // useEffect(() => {
-  //   if (onApod) {
-  //     document.querySelector('.APOD').style.display = 'flex';
-  //   } else {
-  //     document.querySelector('.APOD').style.display = 'none';
-  //   }
-  // if (onMars) {
-  //   document.querySelector('.mars').style.display = 'block';
-  // } else {
-  //   document.querySelector('.mars').style.display = 'none';
-  // }
-  // }, [onApod, onMars]);
 
   return (
     <div className="App">

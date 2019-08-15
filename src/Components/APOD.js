@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
+import DateForm from './DateForm';
 import axios from 'axios';
 import './APOD.css';
 
 export default function APOD(props) {
   const today = new Date();
 
-  const dd = String(today.getDate()).padStart(2, '0');
-  const mm = String(today.getMonth() + 1).padStart(2, '0');
-  const yyyy = today.getFullYear();
+  const [dd, setDd] = useState(String(today.getDate()).padStart(2, '0'));
+  const [mm, setMm] = useState(String(today.getMonth() + 1).padStart(2, '0'));
+  const [yyyy, setYyyy] = useState(today.getFullYear());
 
   const [data, setData] = useState({});
   const [date, setDate] = useState(`${yyyy}-${mm}-${dd}`);
@@ -25,6 +26,10 @@ export default function APOD(props) {
       .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
       .then(response => {
         setData(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+        alert('Sorry, please try a different date!');
       });
   }, [date]);
 
@@ -39,6 +44,17 @@ export default function APOD(props) {
       />
       <img src={data.url} alt={data.title} />
       <p>{data.explanation}</p>
+      <DateForm
+        dd={dd}
+        setDd={setDd}
+        mm={mm}
+        setMm={setMm}
+        yyyy={yyyy}
+        setYyyy={setYyyy}
+        date={date}
+        setDate={setDate}
+      />
+      <br />
       <button onClick={() => randomDate()}>Random Date</button>
     </div>
   );
