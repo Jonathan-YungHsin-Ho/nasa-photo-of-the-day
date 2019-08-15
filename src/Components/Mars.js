@@ -2,16 +2,19 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import axios from 'axios';
 import styled from 'styled-components';
+import { StyledButton } from './StyledButton';
 
-// import './APOD.css';
+const StyledDiv = styled.div``;
 
 export default function Mars() {
   const [data, setData] = useState({});
 
+  const apiKey = 'DEMO_KEY';
+
   useEffect(() => {
     axios
       .get(
-        'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY',
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${apiKey}`,
       )
       .then(response => {
         const random = Math.floor(Math.random() * response.data.photos.length);

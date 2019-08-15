@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StyledButton } from './StyledButton';
 
 const StyledForm = styled.form`
   width: 50%;
@@ -70,7 +71,7 @@ export default function DateForm(props) {
           </option>
         ))}
       </StyledSelect>
-      <button>Select Date</button>
+      <StyledButton>Select Date</StyledButton>
     </StyledForm>
   );
 }

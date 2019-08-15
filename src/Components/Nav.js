@@ -1,10 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
+import { StyledButton } from './StyledButton';
+
+const StyledDiv = styled.div`
+  background-color: #010101;
+  display: flex;
+`;
 
 export default function Nav(props) {
   return (
-    <div className="nav">
-      <button onClick={() => props.showApod()}>APOD</button>
-      <button onClick={() => props.showMars()}>Mars Rover Photos</button>
-    </div>
+    <StyledDiv>
+      <StyledButton onClick={() => props.showApod()}>APOD</StyledButton>
+      <StyledButton onClick={() => props.showMars()}>
+        Mars Rover Photos
+      </StyledButton>
+    </StyledDiv>
   );
 }

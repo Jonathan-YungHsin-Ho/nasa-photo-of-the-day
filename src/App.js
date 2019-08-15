@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+// import './App.css';
 
 import Nav from './Components/Nav';
 import APOD from './Components/APOD';

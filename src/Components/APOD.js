@@ -23,9 +23,11 @@ export default function APOD(props) {
     setDate(`${year}-${month}-${day}`);
   };
 
+  const apiKey = 'DEMO_KEY';
+
   useEffect(() => {
     axios
-      .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
+      .get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`)
       .then(response => {
         setData(response.data);
       })

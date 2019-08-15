@@ -4,12 +4,12 @@
   max-width: 100%;
 }
 
-.nav {
-  background-color: #ed161f;
-  display: flex;
-}
+/* .nav { */
+/* background-color: #ed161f; */
+/* display: flex;
+} */
 
-button {
+/* button {
   padding: 10px 0;
   width: 50%;
   border: none;
@@ -22,12 +22,12 @@ button {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   text-transform: uppercase;
-  font-weight: bold;
-}
+  font-weight: bold; */
+/* }
 
 button:hover {
   background-color: #b40e16;
-}
+} */
 
 .APOD {
   width: 100%;
