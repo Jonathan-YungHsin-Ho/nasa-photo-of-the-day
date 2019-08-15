@@ -1,9 +1,10 @@
-import React from 'react';
+// import React from 'react';
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
-  padding: 10px 0;
+  padding: 10px 2% 15px 2%;
   width: 50%;
+  max-width: 600px;
   border: none;
   background-color: #ed161f;
   color: whitesmoke;

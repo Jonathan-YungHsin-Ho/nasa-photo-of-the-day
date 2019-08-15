@@ -3,16 +3,32 @@ import styled from 'styled-components';
 import { StyledButton } from './StyledButton';
 
 const StyledForm = styled.form`
-  width: 50%;
+  width: 600px;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 700px) {
+    flex-wrap: wrap;
+    width: 85%;
+  }
 `;
 
 const StyledSelect = styled.select`
-  padding: 0 7px;
+  padding: 0 1%;
   font-size: 18px;
   border: none;
   background-color: whitesmoke;
+
+  @media screen and (max-width: 700px) {
+    flex-grow: 1;
+    height: 49px;
+  }
+`;
+
+const SelectButton = styled(StyledButton)`
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 export default function DateForm(props) {
@@ -71,7 +87,7 @@ export default function DateForm(props) {
           </option>
         ))}
       </StyledSelect>
-      <StyledButton>Select Date</StyledButton>
+      <SelectButton>Select Date</SelectButton>
     </StyledForm>
   );
 }

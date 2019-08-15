@@ -3,8 +3,13 @@ import styled from 'styled-components';
 import { StyledButton } from './StyledButton';
 
 const StyledDiv = styled.div`
-  background-color: #010101;
+  background-color: #ed161f;
   display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  padding: 0 1%;
+  width: 100%;
 `;
 
 export default function Nav(props) {
