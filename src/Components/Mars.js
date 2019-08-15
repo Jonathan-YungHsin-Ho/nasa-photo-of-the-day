@@ -1,38 +1,9 @@
+/** @jsx jsx */
+
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import axios from 'axios';
-import styled from 'styled-components';
-
-const StyledDiv = styled.div`
-  background-color: #010101;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 100px;
-`;
-
-const StyledH3 = styled.h3`
-  color: whitesmoke;
-  font-size: 22px;
-  font-weight: normal;
-  margin-top: 100px;
-`;
-
-const StyledImg = styled.img`
-  min-width: 50%;
-  max-width: 75%;
-  padding: 100px 0;
-`;
-
-const StyledP = styled.p`
-  width: 65%;
-  max-width: 780px;
-  text-align: left;
-  color: whitesmoke;
-  font-size: 22px;
-  line-height: 1.5;
-  padding-bottom: 50px;
-`;
+import { css, jsx } from '@emotion/core';
 
 export default function Mars() {
   const [data, setData] = useState({});
@@ -51,16 +22,51 @@ export default function Mars() {
       .catch(err => console.log(err));
   }, []);
 
-  if (!data.img_src) return <StyledH3>Loading...</StyledH3>;
+  if (!data.img_src)
+    return (
+      <h3
+        css={css`
+          color: whitesmoke;
+          font-size: 22px;
+          font-weight: normal;
+          margin-top: 100px;
+        `}>
+        Loading...
+      </h3>
+    );
 
   return (
-    <StyledDiv className="mars">
+    <div
+      css={css`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 100px;
+      `}
+      className="mars">
       <Header date={data.earth_date} header={'Random Mars Rover Image from:'} />
-      <StyledImg src={data.img_src} alt={'Mars'} />
-      <StyledP>
+      <img
+        css={css`
+          min-width: 50%;
+          max-width: 75%;
+          padding: 50px 0;
+        `}
+        src={data.img_src}
+        alt={'Mars'}
+      />
+      <p
+        css={css`
+          width: 65%;
+          max-width: 780px;
+          text-align: left;
+          color: whitesmoke;
+          font-size: 22px;
+          line-height: 1.5;
+          padding-bottom: 50px;
+        `}>
         Randomly selected image collected by NASA's Curiosity, Opportunity, and
         Spirit rovers on Mars.
-      </StyledP>
-    </StyledDiv>
+      </p>
+    </div>
   );
 }

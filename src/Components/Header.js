@@ -10,6 +10,10 @@ const StyledH1 = styled.h1`
   margin-top: 49px;
   margin-bottom: 0;
 
+  @media screen and (max-width: 700px) {
+    font-size: 22px;
+  }
+
   @media screen and (max-width: 416px) {
     margin-top: 73px;
   }
@@ -19,13 +23,13 @@ const StyledH2 = styled.h2`
   width: 100%;
   background-color: #0066b3;
   color: white;
-  font-size: 60px;
+  font-size: 48px;
   text-transform: uppercase;
   padding: 10px 0;
   margin-top: 0;
 
   @media screen and (max-width: 700px) {
-    font-size: 48px;
+    font-size: 36px;
     margin-bottom: 0;
   }
 `;
