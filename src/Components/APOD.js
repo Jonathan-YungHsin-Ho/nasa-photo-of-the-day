@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import DateForm from './DateForm';
 import axios from 'axios';
+import styled from 'styled-components';
+
 import './APOD.css';
 
 export default function APOD(props) {

@@ -96,16 +96,3 @@ p {
   line-height: 1.5;
   padding-bottom: 50px;
 }
-
-form {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-}
-
-select {
-  padding: 0 7px;
-  font-size: 18px;
-  border: none;
-  background-color: whitesmoke;
-}

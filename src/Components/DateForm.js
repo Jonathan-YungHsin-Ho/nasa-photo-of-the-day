@@ -1,4 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledForm = styled.form`
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const StyledSelect = styled.select`
+  padding: 0 7px;
+  font-size: 18px;
+  border: none;
+  background-color: whitesmoke;
+`;
 
 export default function DateForm(props) {
   const monthArray = [
@@ -34,29 +48,29 @@ export default function DateForm(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <select name="month" onChange={e => props.setMm(e.target.value)}>
+    <StyledForm onSubmit={handleSubmit}>
+      <StyledSelect name="month" onChange={e => props.setMm(e.target.value)}>
         {monthArray.map((month, index) => (
           <option key={month} value={index + 1}>
             {month}
           </option>
         ))}
-      </select>
-      <select name="day" onChange={e => props.setDd(e.target.value)}>
+      </StyledSelect>
+      <StyledSelect name="day" onChange={e => props.setDd(e.target.value)}>
         {dayArray.map(day => (
           <option key={day} value={day}>
             {day}
           </option>
         ))}
-      </select>
-      <select name="year" onChange={e => props.setYyyy(e.target.value)}>
+      </StyledSelect>
+      <StyledSelect name="year" onChange={e => props.setYyyy(e.target.value)}>
         {yearArray.map(year => (
           <option key={year} value={year}>
             {year}
           </option>
         ))}
-      </select>
+      </StyledSelect>
       <button>Select Date</button>
-    </form>
+    </StyledForm>
   );
 }

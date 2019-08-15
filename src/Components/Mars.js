@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import axios from 'axios';
-import './APOD.css';
+import styled from 'styled-components';
+
+// import './APOD.css';
 
 export default function Mars() {
   const [data, setData] = useState({});
